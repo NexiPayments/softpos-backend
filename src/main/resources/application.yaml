@@ -1,0 +1,38 @@
+spring:
+    application:
+        name: pizzapaybackend
+    jpa:
+        open-in-view: false
+    main:
+      banner-mode: "off"
+    profiles:
+      active: secrets
+springdoc:
+  swagger-ui:
+    tagsSorter: alpha
+    operationsSorter: alpha
+
+nexi-soft-pos-backend:
+  # Base URL provided by Nexi
+  baseUrl: https://stgb2bsoftpos.nexigroup.com
+  # Client ID provided by Nexi for OAuth2 flow
+  clientId: 1498d08e-386b-11ef-a697-7bc7d507ae34
+  # Client Secret provided by Nexi for OAuth2 flow
+  secret: 301b4ed6-386b-11ef-a48d-23f2c5230c55
+  # PEM-encoded certificate signed by Nexi
+  mtlsCertificate: |
+    -----BEGIN CERTIFICATE-----
+    MII.....
+    -----END CERTIFICATE-----
+  # PEM-encoded private key used to create the CSR
+  privateKey: |
+    -----BEGIN PRIVATE KEY-----
+    MII.....
+    -----END PRIVATE KEY-----
+pointsofsales:
+  available:
+  - pointOfSale: 1000000000000
+    terminals:
+    - forSoftpos: 10000000
+      forMpos: 10000001
+
